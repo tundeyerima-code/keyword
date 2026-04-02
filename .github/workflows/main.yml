@@ -2,26 +2,36 @@ name: Update Trends
 
 on:
   schedule:
-    - cron: '0 0,12 * * *' # Every 12 hours
+    - cron: '0 0,12 * * *'
   workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
+          
       - name: Install
-        run: npm install
+        run: npm install axios xml2js
+        
       - name: Generate
         run: node generate.js
-      - name: Deploy
-        run: |
-          git config --global user.name "SEO-Bot"
-          git config --global user.email "bot@trend-magnet.ng"
-          git add index.html
-          git commit -m "Auto-update trends: $(date)" || exit 0
-          git push
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.' # This uploads the index.html we just generated
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
