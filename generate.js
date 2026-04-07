@@ -3,7 +3,7 @@ const axios = require('axios');
 const xml2js = require('xml2js');
 
 const TRENDS_URL = 'https://trends.google.com/trending/rss?geo=NG';
-const SITE_URL = 'https://yourname.github.io/repo-name/'; // <-- CHANGE THIS TO YOUR URL
+const SITE_URL = 'https://tundeyerima-code.github.io/keyword/'; // <-- CHANGE THIS TO YOUR URL
 
 const MODIFIERS = [
     "strategy for Nigerian creators",
