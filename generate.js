@@ -57,6 +57,7 @@ async function startDiscovery() {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="google-site-verification" content="LV6ECm0Ym2rY6KImE0r8aRWAlEut1y4s1hywiVC0pTY" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NG Trend Magnet | SEO Discovery ${dateString}</title>
     <script src="https://cdn.tailwindcss.com"></script>
