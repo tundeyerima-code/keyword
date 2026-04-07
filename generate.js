@@ -2,8 +2,6 @@ const fs = require('fs');
 const axios = require('axios');
 const xml2js = require('xml2js');
 
-<meta name="google-site-verification" content="LV6ECm0Ym2rY6KImE0r8aRWAlEut1y4s1hywiVC0pTY" />
-
 const TRENDS_URL = 'https://trends.google.com/trending/rss?geo=NG';
 
 // Expanded modifiers to make the list more diverse
